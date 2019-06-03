@@ -13,14 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
+
+from todo.urls import router as blog_router
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todo/', include('todo.urls')),
     path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),  # 追加
+    path('accounts/', include('django.contrib.auth.urls')),
     path('',  RedirectView.as_view(url='/todo/')),
+    path('sendmail/', include('sendmail.urls')),
+    path('item/', include('itemapp.urls')),
+    url(r'^api/', include(blog_router.urls)),
 ]
+
+

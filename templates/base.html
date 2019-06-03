@@ -16,11 +16,11 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}" class="logout">ログアウト</a></li>
-                {% else %}
                 <li><a href="{% url 'accounts:signup' %}" class="signup">ユーザー登録</a></li>
-                <li><a href="{% url 'login' %}" class="login">ログイン</a></li>
+                <li><a href="{% url 'top' %}">トップページ</a></li>
+                {% else %}
+{#                <li><a href="{% url 'login' %}" class="login">ログイン</a></li>#}
                 {% endif %}
-                <li><a class="act">Add Post</a></li>
             </ul>
         </nav>
     </header>
