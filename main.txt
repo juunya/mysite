@@ -2,6 +2,4 @@ asdfasdfasdf asdfsaf sa fsadrgergregreasfsda
 
 
 
-main
-
-main2
+mainの変更１
